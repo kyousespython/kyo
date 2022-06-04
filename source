@@ -1,0 +1,27 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("kyo private hub v1.0", "Midnight")
+
+local UniversalTab = Window:NewTab("Universal")
+local UniversalSection = UniversalTab:NewSection("Charackter")
+
+UniversalSection:NewSlider("Speed", "Changes ur speed.", 500, 16, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+UniversalSection:NewSlider("Jump Power", "Changes ur Jump Power.", 500, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = jp
+end)
+
+getgenv().Toggled = false
+
+local toggle = Section:NewToggle("Toggle", "Info", (state)
+    getgenv().Toggled = state
+end)
+
+UniversalSection:NewToggle("Jump Power", "Toggles using Jump Power", function(state)
+    if state then
+        game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
+    else
+        game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+    end
+end)
